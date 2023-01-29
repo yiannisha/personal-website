@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+:root {
+    --primary-bg: #1E1E1E;
+    --primary-text: #FFFFFF;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    background-color: var(--primary-bg);
+}
+
+main {
+    height: 100vh;
+}
+
+h1, h2, h3, h4, h5, p, li, div {
+    color: var(--primary-text);
+    font-family: 'Inter', sans-serif;
+}
+
+.maxHeight {
+    height: 100%;
+}

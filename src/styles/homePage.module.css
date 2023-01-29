@@ -1,0 +1,31 @@
+.header-col {
+    padding-top: 25vh;
+}
+
+.header {
+    font-size: 72px;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 40px;
+    font-weight: 100;
+}
+
+.image-wrapper {
+    border-radius: 50px;
+    max-width: 30%;
+}
+
+.socialsContainer {
+    margin-top: 1em;
+    padding: .5em .25em;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 45%;
+
+    background-color: #272827;
+    border-radius: 10px;;
+}
