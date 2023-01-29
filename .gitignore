@@ -3,3 +3,4 @@ node_modules/
 public
 credentials.js
 .env*
+.DS_Store
