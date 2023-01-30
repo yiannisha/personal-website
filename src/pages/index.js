@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "gatsby";
 import { Container, Col, Row } from "reactstrap";
 import { StaticImage } from "gatsby-plugin-image";
 
@@ -59,7 +60,19 @@ const HomePage = () => {
               </a>
             </div>
           </Col>
-          <Col md={6}>
+          <Col  md={{ size: 3, offset: 3}} className={`${homePageStyles.navigationCol} ${animationStyles.fadeInRight}`} style={{animationDelay: `4.2s`}}>
+            <Link to="/about"
+            className={`text-reset text-decoration-none ${homePageStyles.navigationLink} ${animationStyles.bounceRight}`}
+            style={{animationDelay: `4.4s`}}
+            >About me</Link>
+            <Link to="/work"
+            className={`text-reset text-decoration-none ${homePageStyles.navigationLink} ${animationStyles.bounceRight}`}
+            style={{animationDelay: `4.6s`}}
+            >My previous work</Link>
+            <Link to="/projects"
+            className={`text-reset text-decoration-none ${homePageStyles.navigationLink} ${animationStyles.bounceRight}`}
+            style={{animationDelay: `4.8s`}}
+            >My personal projects</Link>
           </Col>
         </Row>
       </Container>

@@ -2,6 +2,9 @@
 :root {
     --primary-bg: #1E1E1E;
     --primary-text: #FFFFFF;
+    --primary-theme-about: #F72585;
+    --primary-theme-work: #C1121F;
+    --primary-theme-projects: #0582CA;
 }
 
 html {
