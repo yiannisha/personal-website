@@ -72,3 +72,14 @@
 .navigation-link:hover:nth-child(3) {
     box-shadow: inset 500px 0 0 0 var(--primary-theme-projects);
 }
+
+/* responsiveness */
+@media only screen and (max-width: 913px) {
+    .header-col {
+        padding-top: 5vh;
+    }
+
+    .navigation-col {
+        padding-top: 5vh;
+    }
+}
