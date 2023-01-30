@@ -1,0 +1,33 @@
+.title {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.title-col {
+    text-align: right;
+}
+
+.top-row {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-end;
+
+    padding-top: 15vh;
+}
+
+.description {
+    font-size: 25px;
+    font-weight: 200;
+}
+
+.technical-skills {
+    font-size: 32px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.external-link {
+    font-size: 32px;
+    font-weight: 500;
+}

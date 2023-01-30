@@ -20,11 +20,37 @@ main {
     height: 100vh;
 }
 
-h1, h2, h3, h4, h5, p, li, div {
+h1, h2, h3, h4, h5, p, li, div, span {
     color: var(--primary-text);
     font-family: 'Inter', sans-serif;
 }
 
+.header {
+    font-size: 72px;
+    font-weight: bold;
+}
+
 .maxHeight {
     height: 100%;
+}
+
+.navigation-link {
+    font-size: 32px;
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 0 .25rem;
+
+    transition: box-shadow 1s;
+}
+
+.navigation-link-about:hover {
+    box-shadow: inset 500px 0 0 0 var(--primary-theme-about);
+}
+
+.navigation-link-work:hover {
+    box-shadow: inset 500px 0 0 0 var(--primary-theme-work);
+}
+
+.navigation-link-projects:hover {
+    box-shadow: inset 500px 0 0 0 var(--primary-theme-projects);
 }
