@@ -1,0 +1,48 @@
+.fade-in-up {
+    display: inline-block;
+    overflow: hidden;
+
+    opacity: 0;
+    animation: .5s fade-in-up-animation .2s ease-in-out forwards;
+}
+
+@keyframes fade-in-up-animation {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+.typewriter {
+    display: inline-block;
+    overflow: hidden;
+    border-right: .05em solid white;
+    white-space: break-spaces;
+    animation: 
+       blink-caret .75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
+}
+
+.bounce {
+    animation: .5s bounce-animation ease-in;
+}
+
+@keyframes bounce-animation {
+    0% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(-70%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}

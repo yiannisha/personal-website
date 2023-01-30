@@ -1,5 +1,9 @@
 .header-col {
     padding-top: 25vh;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
 }
 
 .header {
@@ -17,8 +21,9 @@
     max-width: 30%;
 }
 
-.socialsContainer {
-    margin-top: 1em;
+.socials-container {
+    overflow: visible;
+    margin-top: 3em;
     padding: .5em .25em;
 
     display: flex;
@@ -28,4 +33,12 @@
 
     background-color: #272827;
     border-radius: 10px;;
+}
+
+.social-link {
+    transition: .2s;
+}
+
+.social-link:hover {
+    filter: brightness(.7);
 }
