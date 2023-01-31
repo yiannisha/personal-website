@@ -1,12 +1,34 @@
 import * as React from "react";
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { Container, Row, Col } from "reactstrap";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
+import { capitalize } from "../utils";
 import NavigationLink from "../components/NavigationLink";
 
 import * as styles from "../styles/page.module.css";
 import * as showPageStyles from "../styles/showPage.module.css";
 
-const ShowPage = ({ type }) => {
+const ShowPage = ({ type, projectData}) => {
+
+    type = capitalize(type);
+
+    const image1 = getImage(projectData.image1);
+    const image2 = getImage(projectData.image2);
+    
+    const {
+        name,
+        description,
+        technicalSkills,
+        caption1,
+        caption2,
+        externalLink,
+    } = projectData;
+
+    // remove unnecessary unicode characters
+    description.raw = description.raw.replace(/[\u{0080}-\u{FFFF}]/gu,"");
+    const formattedDescription = documentToReactComponents(JSON.parse(description.raw));
+
     return (
         <main>
             <Container>
@@ -18,31 +40,51 @@ const ShowPage = ({ type }) => {
                     </Col>
                     <Col md={{size: 6}} className={showPageStyles.titleCol}>
                         <h1 className={showPageStyles.title}>
-                            DBmanage
+                            { name }
                         </h1>
                     </Col>
                 </Row>
-                <Row>
-                    <Col md={{size: 6}}>
-                        Pictures
+                <Row className={`mt-3`}>
+                    <Col md={{size: 6}} className={showPageStyles.imageContainer}>
+                        <Row className={showPageStyles.imageWrapper}>
+                            <Col md={{ size: 6 }}>
+                                    <GatsbyImage alt={ name } image={ image1 } className={`me-3 ${showPageStyles.imageShadow} ${showPageStyles[`imageShadow${type}`]}`}/>
+                            </Col>
+                            <Col md={{ size: 6 }}>
+                                <span>
+                                    { caption1 }
+                                </span>
+                            </Col>
+                        </Row>
+                        <Row className={showPageStyles.imageWrapper}>
+                            <Col md={{ size: 6 }}>
+                                <span>
+                                    { caption2 }
+                                </span>
+                            </Col>
+                            <Col md={{ size: 6 }}>
+                                    <GatsbyImage alt={ name } image={ image2 } className={`me-3 ${showPageStyles.imageShadow} ${showPageStyles[`imageShadow${type}`]}`}/>
+                            </Col>
+                        </Row>
+
                     </Col>
                     <Col md={{size: 6}}>
-                        <div className={showPageStyles.description}>
-                            <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            </p>
+                        <div className={`${showPageStyles.description} ${showPageStyles[`description${type}`]}`}>
+                            { formattedDescription }
                         </div>
                         <div className={showPageStyles.technicalSkills}>
                             <p>
-                                TECHNICAL SKILLS
+                                { technicalSkills }
                             </p>
                         </div>
+                        <hr className={`${showPageStyles.separator} ${showPageStyles[`separator${type}`]}`} />
                         <div className={showPageStyles.externalLink}>
                             <NavigationLink
                             type={type}
-                            href={`https://www.google.com`}
+                            href={ externalLink }
                             anchor>
-                                Github Page
+                                <i className="fa fa-github"></i>
+                                &nbsp;Github Page
                             </NavigationLink>
                         </div>
                     </Col>

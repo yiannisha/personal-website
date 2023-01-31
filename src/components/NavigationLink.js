@@ -1,6 +1,8 @@
 import * as React from "react";
 import { Link } from "gatsby";
 
+import { capitalize } from "../utils";
+
 import * as styles from "../styles/page.module.css";
 
 const NavigationLink = ({ href, type, anchor = false, className = "", style, children }) => {
@@ -30,7 +32,3 @@ const NavigationLink = ({ href, type, anchor = false, className = "", style, chi
 }
 
 export default NavigationLink;
-
-const capitalize  = (str) => {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-}

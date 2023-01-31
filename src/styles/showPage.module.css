@@ -21,6 +21,27 @@
     font-weight: 200;
 }
 
+.description-about {
+    --strong-color: var(--primary-theme-about);
+}
+
+.description-work {
+    --strong-color: var(--primary-theme-work);
+}
+
+.description-projects {
+    --strong-color: var(--primary-theme-projects);
+}
+
+.description p {
+    white-space: pre-wrap;
+}
+
+.description b {
+    font-weight: 600;
+    color: var(--strong-color);
+}
+
 .technical-skills {
     font-size: 32px;
     font-weight: 300;
@@ -30,4 +51,53 @@
 .external-link {
     font-size: 32px;
     font-weight: 500;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.image-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+}
+
+.image-shadow {
+    box-shadow: 10px 10px;
+}
+
+.image-shadow-about {
+    color: var(--primary-theme-about);
+}
+
+.image-shadow-work {
+    color: var(--primary-theme-work);
+}
+
+.image-shadow-projects {
+    color: var(--primary-theme-projects);
+}
+
+.image-wrapper span {
+    text-align: center;
+}
+
+.separator {
+    border-top: 3px solid;
+}
+
+.separator-about {
+    border-color: var(--primary-theme-about);
+}
+
+.separator-work {
+    border-color: var(--primary-theme-work);
+}
+
+.separator-projects {
+    border-color: var(--primary-theme-projects);
 }
