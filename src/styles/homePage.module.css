@@ -6,11 +6,6 @@
     gap: 3%;
 }
 
-.header {
-    font-size: 72px;
-    font-weight: bold;
-}
-
 .subtitle {
     font-size: 40px;
     font-weight: 100;
@@ -50,27 +45,6 @@
 
     padding-top: 79vh;
     gap: 3%;
-}
-
-.navigation-link {
-    font-size: 32px;
-    font-weight: 500;
-    white-space: nowrap;
-    padding: 0 .25rem;
-
-    transition: box-shadow 1s;
-}
-
-.navigation-link:hover:nth-child(1) {
-    box-shadow: inset 500px 0 0 0 var(--primary-theme-about);
-}
-
-.navigation-link:hover:nth-child(2) {
-    box-shadow: inset 500px 0 0 0 var(--primary-theme-work);
-}
-
-.navigation-link:hover:nth-child(3) {
-    box-shadow: inset 500px 0 0 0 var(--primary-theme-projects);
 }
 
 /* responsiveness */

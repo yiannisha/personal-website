@@ -1,11 +1,11 @@
 import * as React from "react";
-import { Link } from "gatsby";
 import { Container, Col, Row } from "reactstrap";
 import { StaticImage } from "gatsby-plugin-image";
 
 // components
 import Page from "../containers/Page";
 import Typewriter from "../components/Typewriter";
+import NavigationLink from "../components/NavigationLink";
 
 // styles
 import * as styles from "../styles/page.module.css";
@@ -19,7 +19,7 @@ const HomePage = () => {
         <Row className={styles.maxHeight}>
           <Col md={6} className={homePageStyles.headerCol}>
             <div>
-              <h1 className={homePageStyles.header}>
+              <h1 className={styles.header}>
                 <span className={animationStyles.fadeInUp}>
                   Hi,
                 </span>
@@ -61,18 +61,30 @@ const HomePage = () => {
             </div>
           </Col>
           <Col  md={{ size: 3, offset: 3}} className={`${homePageStyles.navigationCol} ${animationStyles.fadeInRight}`} style={{animationDelay: `4.2s`}}>
-            <Link to="/about"
-            className={`text-reset text-decoration-none ${homePageStyles.navigationLink} ${animationStyles.bounceRight}`}
+            <NavigationLink
+            type="about"
+            href="/about"
+            className={animationStyles.bounceRight}
             style={{animationDelay: `4.4s`}}
-            >About me</Link>
-            <Link to="/work"
-            className={`text-reset text-decoration-none ${homePageStyles.navigationLink} ${animationStyles.bounceRight}`}
+            >
+              About me
+            </NavigationLink>
+            <NavigationLink
+            type="work"
+            href="/work"
+            className={animationStyles.bounceRight}
             style={{animationDelay: `4.6s`}}
-            >My previous work</Link>
-            <Link to="/projects"
-            className={`text-reset text-decoration-none ${homePageStyles.navigationLink} ${animationStyles.bounceRight}`}
+            >
+              My previous work
+            </NavigationLink>
+            <NavigationLink
+            type="projects"
+            href="/projects"
+            className={animationStyles.bounceRight}
             style={{animationDelay: `4.8s`}}
-            >My personal projects</Link>
+            >
+              My personal projects
+            </NavigationLink>
           </Col>
         </Row>
       </Container>
