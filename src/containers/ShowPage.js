@@ -50,14 +50,14 @@ const ShowPage = ({ type, projectData}) => {
                             <Col md={{ size: 6 }}>
                                     <GatsbyImage alt={ name } image={ image1 } className={`me-3 ${showPageStyles.imageShadow} ${showPageStyles[`imageShadow${type}`]}`}/>
                             </Col>
-                            <Col md={{ size: 6 }}>
+                            <Col md={{ size: 6 }} className={showPageStyles.mobileCaption}>
                                 <span>
                                     { caption1 }
                                 </span>
                             </Col>
                         </Row>
                         <Row className={showPageStyles.imageWrapper}>
-                            <Col md={{ size: 6 }}>
+                            <Col md={{ size: 6 }} className={showPageStyles.mobileCaption}>
                                 <span>
                                     { caption2 }
                                 </span>
