@@ -32,7 +32,7 @@ const ShowPage = ({ type, projectData}) => {
     return (
         <main>
             <Container>
-                <Row className={showPageStyles.topRow}>
+                <Row className={`${styles.topRow} ${showPageStyles.topRow}`}>
                     <Col md={{size: 6}}>
                         <h1 className={styles.header}>
                             Personal<br/>Projects:

@@ -12,8 +12,6 @@
     flex-wrap: nowrap;
     flex-direction: row;
     align-items: flex-end;
-
-    padding-top: 15vh;
 }
 
 .description {
@@ -123,6 +121,7 @@
     }
 
     .mobile-caption {
+        text-align: center;
         margin-top: 1em;
     }
 
