@@ -27,3 +27,23 @@
     font-weight: 600;
     font-style: italic;
 }
+
+.filters span:hover {
+    cursor: pointer;
+}
+
+.project-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    margin-top: 2em;
+}
+
+.projectCard {
+    width: 250px;
+    max-width: 250px;
+
+    margin-top: 1em;
+}

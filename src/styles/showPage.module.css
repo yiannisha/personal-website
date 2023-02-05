@@ -64,22 +64,6 @@
     align-items: center;
 }
 
-.image-shadow {
-    box-shadow: 10px 10px;
-}
-
-.image-shadow-about {
-    color: var(--primary-theme-about);
-}
-
-.image-shadow-work {
-    color: var(--primary-theme-work);
-}
-
-.image-shadow-projects {
-    color: var(--primary-theme-projects);
-}
-
 .image-wrapper span {
     text-align: center;
 }

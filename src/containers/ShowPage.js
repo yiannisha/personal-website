@@ -48,7 +48,7 @@ const ShowPage = ({ type, projectData}) => {
                     <Col md={{size: 6}} className={showPageStyles.imageContainer}>
                         <Row className={showPageStyles.imageWrapper}>
                             <Col md={{ size: 6 }}>
-                                    <GatsbyImage alt={ name } image={ image1 } className={`me-3 ${showPageStyles.imageShadow} ${showPageStyles[`imageShadow${type}`]}`}/>
+                                    <GatsbyImage alt={ name } image={ image1 } className={`me-3 ${styles.imageShadow} ${styles[`imageShadow${type}`]}`}/>
                             </Col>
                             <Col md={{ size: 6 }} className={showPageStyles.mobileCaption}>
                                 <span>
@@ -63,7 +63,7 @@ const ShowPage = ({ type, projectData}) => {
                                 </span>
                             </Col>
                             <Col md={{ size: 6 }}>
-                                    <GatsbyImage alt={ name } image={ image2 } className={`me-3 ${showPageStyles.imageShadow} ${showPageStyles[`imageShadow${type}`]}`}/>
+                                    <GatsbyImage alt={ name } image={ image2 } className={`me-3 ${styles.imageShadow} ${styles[`imageShadow${type}`]}`}/>
                             </Col>
                         </Row>
 

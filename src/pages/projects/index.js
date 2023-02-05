@@ -1,9 +1,10 @@
 import * as React from 'react';
+import { Link } from "gatsby";
 import { Container, Row, Col } from 'reactstrap';
 
 import Page from "../../containers/Page";
 import Filter from "../../components/Filter";
-import NavigationLink from "../../components/NavigationLink";
+import ProjectCard from '../../components/ProjectCard';
 
 import { useProjects } from "../../hooks";
 
@@ -31,11 +32,26 @@ const Projects = () => {
     const filters = Array.from(Object.keys(filterOptions)).map(name => {
         const trigger = getTrigger(name);
         return (
-            <Filter triggerParentActive={trigger} key={ name }>
+            <Filter triggerParentActive={trigger} key={ name } type="projects">
                 { name }
             </Filter>
         );
     });
+
+    const projectData = useProjects();
+    const projectCards = projectData.map(project => {
+        const { name, image1, technicalSkills } = project;
+        return (
+            <Link to="/projects/dbmanage">
+                <ProjectCard
+                name={name}
+                image={image1}
+                tags={technicalSkills.split()}
+                key={name}
+                className={projectStyles.projectCard} />
+            </Link>
+        );
+    })
 
     return (
         <Page>
@@ -57,7 +73,10 @@ const Projects = () => {
                         </div>
                     </Col>
                 </Row>
-                <Row>
+                <Row style={{paddingBottom: "2em"}}>
+                    <Col md={{ offset:2, size: 8 }} className={projectStyles.projectContainer}>
+                        { projectCards }
+                    </Col>
                 </Row>
             </Container>
         </Page>
