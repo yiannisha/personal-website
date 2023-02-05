@@ -1,0 +1,56 @@
+.project-card {
+    position: relative;
+}
+
+.header {
+    font-size: 25px;
+    font-weight: 600;
+    font-style: italic;
+    
+    color: var(--primary-bg);
+}
+
+.project-card .info-wrapper {
+    position: absolute;
+    bottom: 0;
+
+    margin-bottom: 0;
+    padding: .3em;
+
+    width: 100%;
+    height: 20%;
+
+    transition: all .3s;
+}
+
+.project-card .info-wrapper span {
+    font-size: 15px;
+    font-style: italic;
+    
+    opacity: 0;
+
+    transition: all .3s;
+}
+
+.project-card:hover .info-wrapper {
+    height: 30%;
+    background-color: var(--secondary-theme-projects);
+}
+
+.project-card:hover .header {
+    color: var(--primary-text);
+}
+
+.project-card:hover .info-wrapper span {
+    opacity: 1;
+}
+
+.image {
+    width: inherit;
+    max-width: inherit;
+}
+
+.image div {
+    width: inherit;
+    max-width: inherit !important;
+}
