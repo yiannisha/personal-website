@@ -29,7 +29,7 @@
     
     opacity: 0;
 
-    transition: all .3s;
+    transition: all .2s;
 }
 
 .project-card:hover .info-wrapper {
@@ -42,6 +42,13 @@
 }
 
 .project-card:hover .info-wrapper span {
+    opacity: 1;
+}
+
+.project-card-link {
+    transition: all .3s;
+    height: 266px;
+    width: 250px;
     opacity: 1;
 }
 
@@ -85,4 +92,19 @@
         transform: translateY(0%);
         opacity: 1;
     }
+}
+
+.collapse {
+    opacity: 0;
+    width: 0
+}
+
+@media only screen and (max-width: 914px) {
+
+    .collapse {
+        opacity: 0;
+        height: 0;
+        width: 250px;
+    }
+
 }
