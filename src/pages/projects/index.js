@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Link } from "gatsby";
 import { Container, Row, Col } from 'reactstrap';
 
 import Page from "../../containers/Page";
@@ -57,22 +56,20 @@ const Projects = () => {
         technicalSkills = technicalSkills.map(str => str.trim());
 
         return (
-            <Link to={`/projects/${ name.toLowerCase() }`}>
-                <ProjectCard
-                name={name}
-                image={image1}
-                tags={technicalSkills}
-                filter={filterOptions}
-                filterActive={filterActive}
-                key={name}
-                className={projectStyles.projectCard} />
-            </Link>
+            <ProjectCard
+            to={`/projects/${ name.toLowerCase() }`}
+            name={name}
+            image={image1}
+            tags={technicalSkills}
+            filter={filterOptions}
+            filterActive={filterActive}
+            key={name}
+            className={projectStyles.projectCard} />
         );
     })
 
     return (
         <Page>
-            <button onClick={() => console.log(filterActive)}>test</button>
             <Container>
                 <Row className={styles.topRow}>
                     <Col>

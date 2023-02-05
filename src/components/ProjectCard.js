@@ -1,15 +1,18 @@
 import * as React from "react";
-
+import { Link } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 
 import * as styles from "../styles/page.module.css";
+import * as animationStyles from "../styles/animations.module.css";
 import * as projectCardStyles from "../styles/projectCard.module.css";
 
-const ProjectCard = ({ name, image, tags=[], filter={}, filterActive=null, className="" }) => {
+const ProjectCard = ({ to, name, image, tags=[], filter={}, filterActive=null, className="" }) => {
     
     image = getImage(image);
 
-    const tagsString = tags.join();
+    const [fadeIn, setFadeIn] = React.useState(true);
+
+    const tagsString = tags.join(", ");
     const isFiltered = () => {
         for (let tag of tags) {
             if (filter[tag]) {
@@ -20,22 +23,39 @@ const ProjectCard = ({ name, image, tags=[], filter={}, filterActive=null, class
     }
     const display = isFiltered();
 
-    console.log("re-rendered");
-
     className = `${ className } ${ projectCardStyles.projectCard } ${ projectCardStyles.inherit }`;
-    
+    className = (display || !filterActive) ?
+        `${className} ${(fadeIn) ? projectCardStyles.fadeInUp:""}`
+        :
+        `${className} ${projectCardStyles.fadeOutDown}`;
+
+    function handleAnimations (animationName) {
+        let fadeOutReg = /fade-out-down/g;
+        let fadeInReg = /fade-in-up/g;
+
+        if (fadeInReg.test(animationName)) {
+            setFadeIn(false);
+        }
+
+        else if (fadeOutReg.test(animationName)) {
+            setFadeIn(true);
+        }
+    }
+
     return (
-        <div className={ className } style={{ display: (display || !filterActive) ? "block":"none" }} >
-            <GatsbyImage alt={ name } image={ image } className={`${projectCardStyles.image} ${styles.imageShadow} ${styles.imageShadowProjects}`} />
-            <div className={ projectCardStyles.infoWrapper } >
-                <h3 className={ projectCardStyles.header }>
-                    { name }
-                </h3>
-                <span>
-                    { tagsString }
-                </span>
+        <Link to={to}>
+            <div className={ `${className}` } onAnimationEnd={(e) => handleAnimations(e.animationName)}>
+                    <GatsbyImage alt={ name } image={ image } className={`${projectCardStyles.image} ${styles.imageShadow} ${styles.imageShadowProjects}`} />
+                    <div className={ projectCardStyles.infoWrapper } >
+                        <h3 className={ projectCardStyles.header }>
+                            { name }
+                        </h3>
+                        <span>
+                            { tagsString }
+                        </span>
+                    </div>
             </div>
-        </div>
+        </Link>
     );
 }
 
