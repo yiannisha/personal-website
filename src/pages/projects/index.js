@@ -18,15 +18,26 @@ const Projects = () => {
         Python: false,
         MATLAB: false,
         AI: false,
+        Django: false,
     };
 
     const [filterOptions, setFilterOptions] = React.useState(initialFilterState);
+    
+    const isFilterActive = (filter) => Object.values(filter).reduce((sum, curr) => sum || curr, false);
+    const [filterActive, setFilterActive] = React.useState(isFilterActive(initialFilterState));
+    
 
     const getTrigger = (key) => () => {
-        const newState = filterOptions;
-        newState[key] = !filterOptions[key];
+
+        const newState = {
+            ...filterOptions,
+            [key]: !filterOptions[key],
+        };
 
         setFilterOptions(newState);
+
+        setFilterActive(isFilterActive(newState));
+        console.log(filterOptions);
     };
 
     const filters = Array.from(Object.keys(filterOptions)).map(name => {
@@ -40,13 +51,19 @@ const Projects = () => {
 
     const projectData = useProjects();
     const projectCards = projectData.map(project => {
-        const { name, image1, technicalSkills } = project;
+        var { name, image1, technicalSkills } = project;
+        
+        technicalSkills = technicalSkills.split(',');
+        technicalSkills = technicalSkills.map(str => str.trim());
+
         return (
-            <Link to="/projects/dbmanage">
+            <Link to={`/projects/${ name.toLowerCase() }`}>
                 <ProjectCard
                 name={name}
                 image={image1}
-                tags={technicalSkills.split()}
+                tags={technicalSkills}
+                filter={filterOptions}
+                filterActive={filterActive}
                 key={name}
                 className={projectStyles.projectCard} />
             </Link>
@@ -55,6 +72,7 @@ const Projects = () => {
 
     return (
         <Page>
+            <button onClick={() => console.log(filterActive)}>test</button>
             <Container>
                 <Row className={styles.topRow}>
                     <Col>
