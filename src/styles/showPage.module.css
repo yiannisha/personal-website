@@ -12,8 +12,6 @@
     flex-wrap: nowrap;
     flex-direction: row;
     align-items: flex-end;
-
-    padding-top: 15vh;
 }
 
 .description {
@@ -66,22 +64,6 @@
     align-items: center;
 }
 
-.image-shadow {
-    box-shadow: 10px 10px;
-}
-
-.image-shadow-about {
-    color: var(--primary-theme-about);
-}
-
-.image-shadow-work {
-    color: var(--primary-theme-work);
-}
-
-.image-shadow-projects {
-    color: var(--primary-theme-projects);
-}
-
 .image-wrapper span {
     text-align: center;
 }
@@ -123,6 +105,7 @@
     }
 
     .mobile-caption {
+        text-align: center;
         margin-top: 1em;
     }
 

@@ -5,6 +5,7 @@
     --primary-theme-about: #F72585;
     --primary-theme-work: #C1121F;
     --primary-theme-projects: #0582CA;
+    --secondary-theme-projects: #003554;
 }
 
 html {
@@ -23,6 +24,10 @@ main {
 h1, h2, h3, h4, h5, p, li, div, span {
     color: var(--primary-text);
     font-family: 'Inter', sans-serif;
+}
+
+.top-row {
+    padding-top: 15vh;
 }
 
 .header {
@@ -53,4 +58,63 @@ h1, h2, h3, h4, h5, p, li, div, span {
 
 .navigation-link-projects:hover {
     box-shadow: inset 500px 0 0 0 var(--primary-theme-projects);
+}
+
+.underline {
+    display: inline-block;
+}
+
+.underline::after {
+    content: '';
+    width: 0px;
+    height: 3px;
+    display: block;
+    transition: .3s;
+}
+
+.underline:hover::after {
+    width: 100%;
+}
+
+.underline-permanent::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    display: block;
+}
+
+.underline-about::after {
+    background-color: var(--primary-theme-about);
+}
+
+.underline-projects::after {
+    background-color: var(--primary-theme-projects);
+}
+
+.underline-work::after {
+    background-color: var(--primary-theme-work);
+}
+
+@media only screen and (max-width: 913px) {
+
+    .top-row {
+        padding-top: 5vh;
+    }
+
+}
+
+.image-shadow {
+    box-shadow: 10px 10px;
+}
+
+.image-shadow-about {
+    color: var(--primary-theme-about);
+}
+
+.image-shadow-work {
+    color: var(--primary-theme-work);
+}
+
+.image-shadow-projects {
+    color: var(--primary-theme-projects);
 }

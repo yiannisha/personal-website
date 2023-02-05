@@ -1,18 +1,99 @@
 import * as React from 'react';
+import { Container, Row, Col } from 'reactstrap';
 
 import Page from "../../containers/Page";
-import NavigationLink from "../../components/NavigationLink";
+import Filter from "../../components/Filter";
+import ProjectCard from '../../components/ProjectCard';
+
+import { useProjects } from "../../hooks";
+
+import * as styles from "../../styles/page.module.css";
+import * as projectStyles from "../../styles/projects.module.css";
 
 const Projects = () => {
 
+    const initialFilterState = {
+        React: false,
+        Python: false,
+        MATLAB: false,
+        AI: false,
+        Django: false,
+    };
+
+    const [filterOptions, setFilterOptions] = React.useState(initialFilterState);
+    
+    const isFilterActive = (filter) => Object.values(filter).reduce((sum, curr) => sum || curr, false);
+    const [filterActive, setFilterActive] = React.useState(isFilterActive(initialFilterState));
+    
+
+    const getTrigger = (key) => () => {
+
+        const newState = {
+            ...filterOptions,
+            [key]: !filterOptions[key],
+        };
+
+        setFilterOptions(newState);
+
+        setFilterActive(isFilterActive(newState));
+        console.log(filterOptions);
+    };
+
+    const filters = Array.from(Object.keys(filterOptions)).map(name => {
+        const trigger = getTrigger(name);
+        return (
+            <Filter triggerParentActive={trigger} key={ name } type="projects">
+                { name }
+            </Filter>
+        );
+    });
+
+    const projectData = useProjects();
+    const projectCards = projectData.map(project => {
+        var { name, image1, technicalSkills } = project;
+        
+        technicalSkills = technicalSkills.split(',');
+        technicalSkills = technicalSkills.map(str => str.trim());
+
+        return (
+            <ProjectCard
+            to={`/projects/${ name.toLowerCase() }`}
+            name={name}
+            image={image1}
+            tags={technicalSkills}
+            filter={filterOptions}
+            filterActive={filterActive}
+            key={name}
+            className={projectStyles.projectCard} />
+        );
+    })
+
     return (
         <Page>
-            <NavigationLink
-            type="projects"
-            href="/projects/dbmanage"
-            >
-                DBmanage
-            </NavigationLink>
+            <Container>
+                <Row className={styles.topRow}>
+                    <Col>
+                        <h1 className={styles.header}>
+                            Personal
+                            <br />
+                            Projects
+                        </h1>
+                        <div className={projectStyles.filterWrapper}>
+                            <h5 className={projectStyles.filterHeader}>
+                                Filters:&nbsp;
+                            </h5>
+                            <div className={projectStyles.filters}>
+                                { filters }
+                            </div>
+                        </div>
+                    </Col>
+                </Row>
+                <Row style={{paddingBottom: "2em"}}>
+                    <Col md={{ offset:2, size: 8 }} className={projectStyles.projectContainer}>
+                        { projectCards }
+                    </Col>
+                </Row>
+            </Container>
         </Page>
     );
 }
