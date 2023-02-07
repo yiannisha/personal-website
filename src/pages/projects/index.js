@@ -79,9 +79,6 @@ const Projects = () => {
                             Projects
                         </h1>
                         <div className={projectStyles.filterWrapper}>
-                            <h5 className={projectStyles.filterHeader}>
-                                Filters:&nbsp;
-                            </h5>
                             <div className={projectStyles.filters}>
                                 { filters }
                             </div>
