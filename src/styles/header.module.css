@@ -14,3 +14,16 @@
     font-size: 22px;
     font-weight: 500;
 }
+
+.link {
+    opacity: .6;
+    transition: opacity .2s;
+}
+
+.link:hover {
+    opacity: 1;
+}
+
+.link-active {
+    opacity: 1;
+}

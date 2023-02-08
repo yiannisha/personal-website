@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image";
 // components
 import Page from "../containers/Page";
 import Typewriter from "../components/Typewriter";
-import NavigationLink from "../components/NavigationLink";
+// import NavigationLink from "../components/NavigationLink";
 
 // styles
 import * as styles from "../styles/page.module.css";
@@ -14,7 +14,7 @@ import * as animationStyles from "../styles/animations.module.css";
 
 const HomePage = () => {
   return (
-    <Page current="home">
+    <Page current="home" headerClass={animationStyles.fadeInDown} headerStyle={{animationDelay: `4.1s`}}>
       <Container className={styles.maxHeight}>
         <Row className={styles.maxHeight}>
           <Col md={6} className={homePageStyles.headerCol}>

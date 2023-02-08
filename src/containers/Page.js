@@ -24,7 +24,12 @@ const Page = (props) => {
 
     return (
         <main>
-            <Header routes={routes} current={props.current} />
+            <Header
+            routes={routes}
+            current={props.current}
+            className={props.headerClass}
+            style={props.headerStyle}
+            />
             {props.children}
         </main>
     );
