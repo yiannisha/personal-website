@@ -19,7 +19,7 @@
     justify-content: flex-start;
     align-items: center;
 
-    padding: 0 1em;
+    padding: .3em 1em;
     background-color: var(--secondary-bg);
     border-radius: 5px;
 }
@@ -41,9 +41,12 @@
 }
 
 .project-container {
+    padding-bottom: 2em;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 
     gap: 1.3em;
     margin-top: 2em;

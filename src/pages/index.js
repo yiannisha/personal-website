@@ -14,7 +14,7 @@ import * as animationStyles from "../styles/animations.module.css";
 
 const HomePage = () => {
   return (
-    <Page>
+    <Page current="home">
       <Container className={styles.maxHeight}>
         <Row className={styles.maxHeight}>
           <Col md={6} className={homePageStyles.headerCol}>
@@ -60,7 +60,7 @@ const HomePage = () => {
               </a>
             </div>
           </Col>
-          <Col  md={{ size: 3, offset: 3}} className={`${homePageStyles.navigationCol} ${animationStyles.fadeInRight}`} style={{animationDelay: `4.2s`}}>
+          {/* <Col  md={{ size: 3, offset: 3}} className={`${homePageStyles.navigationCol} ${animationStyles.fadeInRight}`} style={{animationDelay: `4.2s`}}>
             <NavigationLink
             type="about"
             href="/about"
@@ -85,7 +85,7 @@ const HomePage = () => {
             >
               My personal projects
             </NavigationLink>
-          </Col>
+          </Col> */}
         </Row>
       </Container>
     </Page>

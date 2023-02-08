@@ -6,7 +6,7 @@ import ShowPage from "../containers/ShowPage";
 const Component = (props) => {
 
     return (
-        <Page>
+        <Page current="projects">
             <ShowPage type="projects" projectData={props.pageContext} />
         </Page>
     );

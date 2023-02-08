@@ -69,7 +69,7 @@ const Projects = () => {
     })
 
     return (
-        <Page>
+        <Page current="projects">
             <Container>
                 <Row className={styles.topRow}>
                     <Col>
@@ -85,10 +85,8 @@ const Projects = () => {
                         </div>
                     </Col>
                 </Row>
-                <Row style={{paddingBottom: "2em"}}>
-                    <Col md={{ offset:2, size: 8 }} className={projectStyles.projectContainer}>
-                        { projectCards }
-                    </Col>
+                <Row style={{paddingBottom: "2em"}} className={projectStyles.projectContainer}>
+                    { projectCards }
                 </Row>
             </Container>
         </Page>
