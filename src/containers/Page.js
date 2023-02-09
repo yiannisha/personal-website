@@ -9,7 +9,7 @@ import '../styles/page.module.css';
 const Page = (props) => {
     const routes = {
         home: {
-            path: "/",
+            path: "/?animations=false",
         },
         about: {
             path: "/about",

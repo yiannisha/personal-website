@@ -2,13 +2,17 @@ import * as React from 'react';
 
 import * as animationStyles from "../styles/animations.module.css";
 
-const Typewriter = ({ text, interval, delay }) => {
+const Typewriter = ({ text, interval, delay, animated=true }) => {
     const [delayed, setDelayed] = React.useState(false);
     const [index, setIndex] = React.useState(0);
     const incrementIndex = () => setIndex(index+1);
 
     React.useEffect(() => {
         var timer;
+
+        if (!animated) {
+            return;
+        }
 
         if (!delayed) {
             timer = setTimeout(() => setDelayed(true), delay*1000);
@@ -24,11 +28,13 @@ const Typewriter = ({ text, interval, delay }) => {
             }
         }
 
-    }, [index, delayed]);
+    }, [index, delayed, animated]);
+
+    console.log("re-rendered");
 
     return (
-        <span className={animationStyles.typewriter} style={{opacity: (delayed) ? 1:0}}>
-            &nbsp;{text.slice(0, index)}
+        <span className={animationStyles.typewriter} style={{opacity: (delayed || !animated) ? 1:0}}>
+            &nbsp;{(animated) ? text.slice(0, index):text}
         </span>
     )
 }
