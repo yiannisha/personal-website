@@ -18,6 +18,10 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
+
+    padding: .3em 1em;
+    background-color: var(--secondary-bg);
+    border-radius: 5px;
 }
 
 .filters span {
@@ -28,17 +32,26 @@
     font-style: italic;
 }
 
+.filters span:nth-last-child(1) {
+    margin-right: 0;
+}
+
 .filters span:hover {
     cursor: pointer;
 }
 
 .project-container {
+    padding-bottom: 2em;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 
     gap: 1.3em;
     margin-top: 2em;
+
+    width: 100%;
 }
 
 .projectCard {
@@ -54,4 +67,8 @@
         align-items: center;
     }
 
+    .filters { 
+        padding: .5em 0;
+        justify-content: center;
+    }
 }

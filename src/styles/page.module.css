@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 :root {
     --primary-bg: #1E1E1E;
+    --primary-bg-low-vis: rgba(30, 30, 30, .8);
+    --secondary-bg: #2D2D2D;
     --primary-text: #FFFFFF;
     --primary-theme-about: #F72585;
     --primary-theme-work: #C1121F;
@@ -14,7 +16,7 @@ html {
 
 body {
     min-height: 100%;
-    background-color: var(--primary-bg);
+    background-color: var(--primary-bg) !important;
 }
 
 main {
@@ -95,10 +97,14 @@ h1, h2, h3, h4, h5, p, li, div, span {
     background-color: var(--primary-theme-work);
 }
 
+.underline-home::after {
+    background-color: var(--primary-text);
+}
+
 @media only screen and (max-width: 913px) {
 
     .top-row {
-        padding-top: 5vh;
+        padding-top: 6vh;
     }
 
 }

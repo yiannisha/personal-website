@@ -47,13 +47,27 @@
     gap: 3%;
 }
 
+.replay-animations {
+    width: fit-content;
+    padding: .2em .7em;
+    border-radius: 5px;
+    background-color: var(--secondary-bg);
+
+    transition: all .2s ease-in-out;
+}
+
+.replay-animations:hover {
+    background-color: #000;
+    cursor: pointer;
+}
+
 /* responsiveness */
 @media only screen and (max-width: 913px) {
     .header-col {
-        padding-top: 5vh;
+        padding-top: 6vh;
     }
 
     .navigation-col {
-        padding-top: 5vh;
+        padding-top: 6vh;
     }
 }

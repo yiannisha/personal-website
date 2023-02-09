@@ -96,7 +96,8 @@
 
 .collapse {
     opacity: 0;
-    width: 0
+    width: 0;
+    pointer-events: none;
 }
 
 @media only screen and (max-width: 914px) {

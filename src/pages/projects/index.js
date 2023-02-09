@@ -69,7 +69,7 @@ const Projects = () => {
     })
 
     return (
-        <Page>
+        <Page current="projects">
             <Container>
                 <Row className={styles.topRow}>
                     <Col>
@@ -79,19 +79,14 @@ const Projects = () => {
                             Projects
                         </h1>
                         <div className={projectStyles.filterWrapper}>
-                            <h5 className={projectStyles.filterHeader}>
-                                Filters:&nbsp;
-                            </h5>
                             <div className={projectStyles.filters}>
                                 { filters }
                             </div>
                         </div>
                     </Col>
                 </Row>
-                <Row style={{paddingBottom: "2em"}}>
-                    <Col md={{ offset:2, size: 8 }} className={projectStyles.projectContainer}>
-                        { projectCards }
-                    </Col>
+                <Row style={{paddingBottom: "2em"}} className={projectStyles.projectContainer}>
+                    { projectCards }
                 </Row>
             </Container>
         </Page>
