@@ -4,17 +4,22 @@ const useWork = () => {
     return useStaticQuery(graphql`
         query {
             allContentfulWork {
-            nodes {
-                companyName
-                description {
-                raw
+                nodes {
+                    companyName
+                    description {
+                    raw
+                    }
+                    jobTitle
+                    name
+                    technicalSkills
+                    workPeriod
+                    externalLinkObject {
+                        links {
+                          name
+                          url
+                        }
+                    }
                 }
-                externalLink
-                jobTitle
-                name
-                technicalSkills
-                workPeriod
-            }
             }
         }
     `).allContentfulWork.nodes;
