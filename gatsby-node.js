@@ -9,6 +9,7 @@ exports.createPages = ({ graphql, actions }) => {
         query {
             allContentfulPersonalProject {
                 nodes {
+                    wip
                     name
                     description {
                         raw

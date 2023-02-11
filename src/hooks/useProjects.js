@@ -5,6 +5,7 @@ const useProjects = () => {
     query {
         allContentfulPersonalProject {
           nodes {
+            wip
             name
             description {
               raw

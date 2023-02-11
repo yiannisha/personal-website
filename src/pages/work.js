@@ -48,7 +48,7 @@ const Work = () => {
 
     return (
         <Page current="work">
-            <Container style={{overflowX: (isMobile) ? "hidden":"auto"}}>
+            <Container className={styles.container} style={{overflowX: (isMobile) ? "hidden":"auto"}}>
                 <Row className={`${styles.topRow} ${workStyles.topRow}`}>
                     <Col md={{size: 6}}>
                         <h1 className={styles.header}>
@@ -68,7 +68,7 @@ const Work = () => {
                         </h5>
                     </Col>
                 </Row>
-                <Row className={styles.botRow}>
+                <Row className={`${styles.botRow} ${workStyles.botRow}`}>
                     <Col md={{size: 6}} className={ workStyles.optionsContainer }>
                         { isBrowser && workOptions }
                         <MobileView style={{width: "100%"}}>

@@ -28,6 +28,10 @@ h1, h2, h3, h4, h5, p, li, div, span {
     font-family: 'Inter', sans-serif;
 }
 
+.container {
+    padding-bottom: 2em;
+}
+
 .top-row {
     padding-top: 15vh;
 }
