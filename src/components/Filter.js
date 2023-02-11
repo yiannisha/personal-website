@@ -1,4 +1,5 @@
 import * as React from "react";
+import { isMobile } from "react-device-detect";
 
 import { capitalize } from "../utils";
 
@@ -18,7 +19,10 @@ const Filter = ({ children, className = "", triggerParentActive = null, type = "
         }
     }
 
-    const style = (!active) ? `${className} ${styles.underline} ${styles[`underline${type}`]}`: `${className} ${styles.underlinePermanent} ${styles[`underline${type}`]}`;
+    const style = (!active) ?
+        `${className} ${(!isMobile) ? styles.underline:""} ${styles[`underline${type}`]}`
+        :
+        `${className} ${styles.underlinePermanent} ${styles[`underline${type}`]}`;
 
     return (
         <span className={style} onClick={triggerActive}>

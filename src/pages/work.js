@@ -68,7 +68,7 @@ const Work = () => {
                         </h5>
                     </Col>
                 </Row>
-                <Row className={workStyles.botRow}>
+                <Row className={styles.botRow}>
                     <Col md={{size: 6}} className={ workStyles.optionsContainer }>
                         { isBrowser && workOptions }
                         <MobileView style={{width: "100%"}}>

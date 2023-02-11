@@ -50,6 +50,7 @@
 .replay-animations {
     width: fit-content;
     padding: .2em .7em;
+    margin-top: .5em;
     border-radius: 5px;
     background-color: var(--secondary-bg);
 
@@ -63,8 +64,9 @@
 
 /* responsiveness */
 @media only screen and (max-width: 913px) {
-    .header-col {
-        padding-top: 6vh;
+    .header {
+        margin-top: 1em;
+        font-size: 62px;
     }
 
     .navigation-col {
