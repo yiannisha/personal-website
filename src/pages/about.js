@@ -8,6 +8,7 @@ import { useAbout } from "../hooks";
 
 import * as styles from "../styles/page.module.css";
 import * as aboutStyles from "../styles/about.module.css";
+import * as homePageStyles from "../styles/homePage.module.css";
 
 const About = () => {
 
@@ -18,7 +19,7 @@ const About = () => {
 
     return (
         <Page current="about">
-            <Container>
+            <Container className={styles.container}>
                 <Row className={styles.topRow}>
                     <Col md={{size: 6}}>
                         <h1 className={styles.header}>
@@ -35,6 +36,27 @@ const About = () => {
                     </Col>
                     <Col md={{size: 6}} className={aboutStyles.aboutText}>
                         { formattedText }
+                    </Col>
+                </Row>
+                <Row>
+                    <Col md={{size: 6, offset: 6}}>
+                        <div className={`${homePageStyles.socialsContainer}`} >
+                            <a
+                            className={`text-reset ${homePageStyles.socialLink}`}
+                            href="https://github.com/yiannisha/">
+                                <i className="fa fa-github fa-3x"></i>
+                            </a>
+                            <a
+                            className={`text-reset ${homePageStyles.socialLink}`}
+                            href="https://www.linkedin.com/in/yiannis-hadjiyianni-36294b1b1/">
+                                <i className="fa fa-linkedin fa-3x"></i>
+                            </a>
+                            <a
+                            className={`text-reset ${homePageStyles.socialLink}`}
+                            href="mailto:hadjiyiannis.3@gmail.com">
+                                <i className="fa fa-envelope fa-3x"></i>
+                            </a>
+                        </div>
                     </Col>
                 </Row>
             </Container>

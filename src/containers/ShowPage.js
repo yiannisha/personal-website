@@ -1,6 +1,6 @@
 import * as React from "react";
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col, Tooltip } from "reactstrap";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 import { capitalize } from "../utils";
@@ -10,6 +10,9 @@ import * as styles from "../styles/page.module.css";
 import * as showPageStyles from "../styles/showPage.module.css";
 
 const ShowPage = ({ type, projectData}) => {
+
+    const [tooltipOpen, setTooltip] = React.useState(false);
+    const tooltipToggle = () => setTooltip(!tooltipOpen);
 
     type = capitalize(type);
 
@@ -23,6 +26,7 @@ const ShowPage = ({ type, projectData}) => {
         caption1,
         caption2,
         externalLink,
+        wip,
     } = projectData;
 
     // remove unnecessary unicode characters
@@ -31,7 +35,7 @@ const ShowPage = ({ type, projectData}) => {
 
     return (
         <main>
-            <Container>
+            <Container className={styles.container}>
                 <Row className={`${styles.topRow} ${showPageStyles.topRow}`}>
                     <Col md={{size: 6}}>
                         <h1 className={styles.header}>
@@ -39,6 +43,8 @@ const ShowPage = ({ type, projectData}) => {
                         </h1>
                     </Col>
                     <Col md={{size: 6}} className={showPageStyles.titleCol}>
+                        { wip && <span className={showPageStyles.wip} id="wip">WIP</span> }
+                        { wip && <Tooltip placement="top" isOpen={tooltipOpen} target="wip" toggle={tooltipToggle}>This project is still a work in progress!</Tooltip> }
                         <h1 className={showPageStyles.title}>
                             { name }
                         </h1>

@@ -70,7 +70,7 @@ const Projects = () => {
 
     return (
         <Page current="projects">
-            <Container>
+            <Container className={styles.container}>
                 <Row className={styles.topRow}>
                     <Col>
                         <h1 className={styles.header}>
