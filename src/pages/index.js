@@ -32,7 +32,7 @@ const HomePage = ({ location }) => {
         <Row className={styles.topRow}>
           <Col md={6}>
             <div>
-              <h1 className={styles.header}>
+              <h1 className={`${styles.header} ${homePageStyles.header}`}>
                 <span className={(playAnimations) ? animationStyles.fadeInUp:""}>
                   Hi,
                 </span>
