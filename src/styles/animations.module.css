@@ -99,3 +99,55 @@
         transform: translateX(0%);
     }
 }
+
+.slide-in-right {
+    animation: .2s slide-in-right-animation ease-in-out forwards;
+}
+
+@keyframes slide-in-right-animation {
+    0% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.slide-in-left {
+    animation: .2s slide-in-left-animation ease-in-out forwards;
+}
+
+@keyframes slide-in-left-animation {
+    0% {
+        transform: translateX(200%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.slide-out-right {
+    animation: .2s slide-out-right-animation ease-in-out forwards;
+}
+
+@keyframes slide-out-right-animation {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(200%);
+    }
+}
+
+.slide-out-left {
+    animation: .2s slide-out-left-animation ease-in-out forwards;
+}
+
+@keyframes slide-out-left-animation {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
+}

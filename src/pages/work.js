@@ -48,7 +48,7 @@ const Work = () => {
 
     return (
         <Page current="work">
-            <Container>
+            <Container style={{overflowX: (isMobile) ? "hidden":"auto"}}>
                 <Row className={`${styles.topRow} ${workStyles.topRow}`}>
                     <Col md={{size: 6}}>
                         <h1 className={styles.header}>
