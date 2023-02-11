@@ -76,7 +76,7 @@ const Projects = () => {
                         <h1 className={styles.header}>
                             Personal
                             <br />
-                            Projects
+                            Projects:
                         </h1>
                         <div className={projectStyles.filterWrapper}>
                             <div className={projectStyles.filters}>
