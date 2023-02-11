@@ -30,9 +30,9 @@ const HomePage = ({ location }) => {
 
   return (
     <Page current="home" headerClass={(playAnimations) ? animationStyles.fadeInDown:""} headerStyle={{animationDelay: `4.1s`}}>
-      <Container className={styles.maxHeight}>
-        <Row className={styles.maxHeight}>
-          <Col md={6} className={homePageStyles.headerCol}>
+      <Container>
+        <Row className={styles.topRow}>
+          <Col md={6}>
             <div>
               <h1 className={styles.header}>
                 <span className={(playAnimations) ? animationStyles.fadeInUp:""}>
