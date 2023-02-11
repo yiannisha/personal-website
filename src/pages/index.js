@@ -6,7 +6,6 @@ import { StaticImage } from "gatsby-plugin-image";
 // components
 import Page from "../containers/Page";
 import Typewriter from "../components/Typewriter";
-// import NavigationLink from "../components/NavigationLink";
 
 // styles
 import * as styles from "../styles/page.module.css";
@@ -19,7 +18,6 @@ const HomePage = ({ location }) => {
   if (location.search) {
     const urlParams = new URLSearchParams(location.search);
     playAnimations = urlParams.get("animations") === "true";
-    console.log(playAnimations);
   }
 
   const replayAnimations = () => {

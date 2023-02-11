@@ -1,0 +1,33 @@
+.caption {
+    display: inline-block;
+    text-align: center;
+
+    margin-top: 1em;
+}
+
+.image-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image {
+    max-width: 30vw;
+}
+
+.about-text {
+    font-size: 22px;
+    font-weight: 200;
+}
+
+.about-text b {
+    color: var(--primary-theme-about);
+}
+
+@media only screen and (max-width: 913px) {
+
+    .about-text {
+        margin-top: 1em;
+    }
+
+}

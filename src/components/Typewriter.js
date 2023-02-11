@@ -30,8 +30,6 @@ const Typewriter = ({ text, interval, delay, animated=true }) => {
 
     }, [index, delayed, animated]);
 
-    console.log("re-rendered");
-
     return (
         <span className={animationStyles.typewriter} style={{opacity: (delayed || !animated) ? 1:0}}>
             &nbsp;{(animated) ? text.slice(0, index):text}

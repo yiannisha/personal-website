@@ -32,6 +32,10 @@ h1, h2, h3, h4, h5, p, li, div, span {
     padding-top: 15vh;
 }
 
+.bot-row {
+    margin-top: 2em !important;
+}
+
 .header {
     font-size: 72px;
     font-weight: bold;
