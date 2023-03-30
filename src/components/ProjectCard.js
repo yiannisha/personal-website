@@ -33,7 +33,6 @@ const ProjectCard = ({ to, name, image, tags=[], filter={}, filterActive=null, c
         let fadeOutReg = /fade-out-down/g;
         let fadeInReg = /fade-in-up/g;
 
-        console.log(animationName);
         if (fadeInReg.test(animationName)) {
             setFadeIn(false);
         }

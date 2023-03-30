@@ -39,7 +39,6 @@ const MobileWorkOptionsContainer = ({ options, setActiveOption }) => {
     const handleAnimationEnd = ({ animationName }) => {
 
         if (animationName === animationStyles.slideOutRightAnimation) {
-            console.log(1);
             setActiveAnimation(slideAnimations.slideInRight);
             prevIndex();
         }
