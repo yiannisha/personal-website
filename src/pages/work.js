@@ -35,7 +35,6 @@ const Work = () => {
     });
 
     var links = undefined;
-    console.log(active.externalLinkObject);
     if (active.externalLinkObject) {
         links = active.externalLinkObject.links.map(link => {
                 return (

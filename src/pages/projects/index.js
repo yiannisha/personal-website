@@ -36,7 +36,6 @@ const Projects = () => {
         setFilterOptions(newState);
 
         setFilterActive(isFilterActive(newState));
-        console.log(filterOptions);
     };
 
     const filters = Array.from(Object.keys(filterOptions)).map(name => {

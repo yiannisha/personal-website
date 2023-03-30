@@ -14,4 +14,4 @@ const Component = (props) => {
 
 export default Component;
 
-export const Head = () => <title>Test</title>
+export const Head = (props) => <title>{ props.pageContext.name }</title>

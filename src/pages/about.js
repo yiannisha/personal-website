@@ -13,7 +13,6 @@ import * as homePageStyles from "../styles/homePage.module.css";
 const About = () => {
 
     const aboutData = useAbout();
-    console.log(aboutData);
     const formattedText = documentToReactComponents(JSON.parse(aboutData.aboutText.raw));
     const image = getImage(aboutData.aboutImage);
 
